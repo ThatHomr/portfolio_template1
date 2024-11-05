@@ -1,5 +1,6 @@
 "use client";
 import { HeaderSection1 } from "@/component/common/HeaderSection1/HeaderSection1";
+import { HeaderSection2 } from "@/component/common/HeaderSection2/HeaderSection2";
 import { Navigation } from "@/component/navigation/Navigation";
 import { navigationMenuList } from "@/component/navigation/navigationMenuInterface";
 import { ColorCode } from "@/style/color/Color";
@@ -47,6 +48,11 @@ export default function Home() {
       <HeaderSection1
         onClick={() => {
           alert("Contact Click HeaderSection1");
+        }}
+      />
+      <HeaderSection2
+        onClick={() => {
+          alert("Contact Click HeaderSection2");
         }}
       />
     </Container>
