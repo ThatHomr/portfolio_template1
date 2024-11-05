@@ -3,6 +3,7 @@ import { hexToRgba } from "@/utils/utils";
 import React from "react";
 import styled from "styled-components";
 import {
+  SkillCardIcon,
   Version1,
   Version2,
   Version3,
@@ -74,15 +75,17 @@ export const SkillCard: React.FC<SkillCardProps> = ({
       $whiteColorRGBA={whiteColorRGBA}
       $blackColorRGBA={blackColorRGBA}
     >
-      {type === 1 ? (
-        <Version1 />
-      ) : type === 2 ? (
-        <Version2 />
-      ) : type === 3 ? (
-        <Version3 />
-      ) : (
-        <Version4 />
-      )}
+      <SkillCardIcon width={124} height={124}>
+        {type === 1 ? (
+          <Version1 width={124} height={124} />
+        ) : type === 2 ? (
+          <Version2 width={124} height={124} />
+        ) : type === 3 ? (
+          <Version3 width={124} height={124} />
+        ) : (
+          <Version4 width={124} height={124} />
+        )}
+      </SkillCardIcon>
       <div className="titleBox">{title}</div>
       <div className="contentBox">{content}</div>
     </Container>

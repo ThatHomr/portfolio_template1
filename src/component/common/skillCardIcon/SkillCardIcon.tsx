@@ -5,19 +5,39 @@ import styled from "styled-components";
 
 export interface SkillCardIconProps {
   children: React.ReactElement;
+  width: number;
+  height: number;
 }
 
-const Container = styled.div`
-  width: 124px;
-  height: 124px;
+interface ContainerProps {
+  $width: number;
+  $height: number;
+}
+
+const Container = styled.div<ContainerProps>`
+  width: ${({ $width }) => $width}px;
+  height: ${({ $height }) => $height}px;
   flex-shrink: 0;
 `;
 
-export const SkillCardIcon: React.FC<SkillCardIconProps> = ({ children }) => {
-  return <Container>{children}</Container>;
+export const SkillCardIcon: React.FC<SkillCardIconProps> = ({
+  children,
+  width,
+  height,
+}) => {
+  return (
+    <Container $width={width} $height={height}>
+      {children}
+    </Container>
+  );
 };
 
-export const Version1 = () => {
+export interface VersionProps {
+  width: number;
+  height: number;
+}
+
+export const Version1: React.FC<VersionProps> = ({ width, height }) => {
   const pinkColoRGBA: string = hexToRgba(
     ColorCode.Pink.hex,
     ColorCode.Pink.opacity
@@ -29,9 +49,9 @@ export const Version1 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="125"
-      height="125"
-      viewBox="0 0 125 125"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
     >
       <path
@@ -46,7 +66,7 @@ export const Version1 = () => {
   );
 };
 
-export const Version2 = () => {
+export const Version2: React.FC<VersionProps> = ({ width, height }) => {
   const redColorRGBA: string = hexToRgba(
     ColorCode.Red.hex,
     ColorCode.Red.opacity
@@ -58,9 +78,9 @@ export const Version2 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="128"
-      height="125"
-      viewBox="0 0 128 125"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
     >
       <path
@@ -75,7 +95,7 @@ export const Version2 = () => {
   );
 };
 
-export const Version3 = () => {
+export const Version3: React.FC<VersionProps> = ({ width, height }) => {
   const greenColorRGBA: string = hexToRgba(
     ColorCode.Green.hex,
     ColorCode.Green.opacity
@@ -87,9 +107,9 @@ export const Version3 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="128"
-      height="128"
-      viewBox="0 0 128 128"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
     >
       <path
@@ -104,7 +124,7 @@ export const Version3 = () => {
   );
 };
 
-export const Version4 = () => {
+export const Version4: React.FC<VersionProps> = ({ width, height }) => {
   const yellowColorRGBA: string = hexToRgba(
     ColorCode.Yellow.hex,
     ColorCode.Yellow.opacity
@@ -116,9 +136,9 @@ export const Version4 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="129"
-      height="125"
-      viewBox="0 0 129 125"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
     >
       <path
