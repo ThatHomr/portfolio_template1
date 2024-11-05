@@ -1,3 +1,4 @@
+"use client";
 import EpilogueFont from "@/fonts/EpilogueFont";
 import { ColorCode } from "@/style/color/Color";
 import { hexToRgba } from "@/utils/utils";

@@ -1,3 +1,4 @@
+"use client";
 import { HeaderSection1 } from "@/component/common/HeaderSection1/HeaderSection1";
 import { Navigation } from "@/component/navigation/Navigation";
 import { navigationMenuList } from "@/component/navigation/navigationMenuInterface";

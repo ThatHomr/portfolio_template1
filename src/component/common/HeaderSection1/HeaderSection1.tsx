@@ -1,9 +1,11 @@
+"use client";
 import { Button } from "@/component/button/Button";
 import { ColorCode } from "@/style/color/Color";
 import { hexToRgba } from "@/utils/utils";
 import Image from "next/image";
 import styled from "styled-components";
-import headerSectionImage1 from "public/image/HeaderImage1.webp";
+import headerSectionImage1 from "../../../../public/image/HeaderImage1.webp";
+import { useEffect, useRef, useState } from "react";
 
 export interface HeaderSection1Props {
   onClick: () => void;
@@ -74,6 +76,11 @@ const Container = styled.div<ContainerProps>`
   }
 `;
 
+/**
+ * HeaderSection1 component
+ * @param param0 onClick 버튼 클릭함수
+ * @returns
+ */
 export const HeaderSection1: React.FC<HeaderSection1Props> = ({ onClick }) => {
   const whiteColorRGBA: string = hexToRgba(
     ColorCode.White.hex,
@@ -83,6 +90,16 @@ export const HeaderSection1: React.FC<HeaderSection1Props> = ({ onClick }) => {
     ColorCode.Black.hex,
     ColorCode.Black.opacity
   );
+  const imgRef = useRef<HTMLDivElement | null>(null);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (imgRef?.current) {
+      setWidth(imgRef?.current?.offsetWidth);
+      setHeight(imgRef?.current?.offsetHeight);
+    }
+  }, [imgRef]);
 
   return (
     <Container
@@ -100,11 +117,14 @@ export const HeaderSection1: React.FC<HeaderSection1Props> = ({ onClick }) => {
         </div>
         <Button label="Contact" onClick={onClick} />
       </div>
-      <Image
-        src={headerSectionImage1.src}
-        alt="headerSectionImage1"
-        className="headerSection1Img"
-      />
+      <div className="headerSection1Img" ref={imgRef}>
+        <Image
+          src={headerSectionImage1.src}
+          alt="headerSectionImage1"
+          width={width}
+          height={height}
+        />
+      </div>
     </Container>
   );
 };
