@@ -23,7 +23,7 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   display: flex;
-  width: 320px;
+  width: -webkit-fill-availability;
   min-width: 320px;
   padding: 64px 42px;
   flex-direction: column;
@@ -31,6 +31,7 @@ const Container = styled.div<ContainerProps>`
   align-items: center;
   gap: 42px;
   background: ${({ $whiteColorRGBA }) => $whiteColorRGBA};
+  flex: 1 0 0;
 
   .titleBox {
     height: 42px;
@@ -40,6 +41,7 @@ const Container = styled.div<ContainerProps>`
     font-style: normal;
     font-weight: 600;
     line-height: 42px;
+    text-align: center;
   }
   .contentBox {
     align-self: stretch;
@@ -48,6 +50,7 @@ const Container = styled.div<ContainerProps>`
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
+    text-align: center;
   }
 `;
 

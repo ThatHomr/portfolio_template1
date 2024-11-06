@@ -93,6 +93,9 @@ const Container = styled.div<ContainerProps>`
     width: 57px;
     height: 59px;
   }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 /**
