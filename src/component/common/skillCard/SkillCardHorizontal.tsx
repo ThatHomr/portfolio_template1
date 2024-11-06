@@ -22,13 +22,14 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   display: flex;
-  flex-direction: row;
-  width: 638px;
+  width: -webkit-fill-availability;
   min-width: 320px;
   padding: 64px 42px;
   align-items: flex-start;
   align-content: flex-start;
   gap: 42px;
+  flex: 1 0 0;
+  flex-wrap: wrap;
   .horizontalBox {
     display: flex;
     flex-direction: column;
