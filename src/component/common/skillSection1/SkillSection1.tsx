@@ -19,18 +19,15 @@ const Container = styled.div<ContainerProps>`
   gap: 42px;
   padding: 42px 24px;
   align-items: center;
+
   background: ${({ $whiteColorRGBA }) => $whiteColorRGBA};
   .cardSection {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 24px;
     align-self: stretch;
-  }
-  @media screen and (max-width: 1212px) {
-    .cardSection {
-      flex-direction: column;
-    }
+    flex-wrap: wrap;
   }
 `;
 

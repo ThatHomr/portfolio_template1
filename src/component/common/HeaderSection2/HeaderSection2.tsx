@@ -22,6 +22,7 @@ const Container = styled.div<ContainerProps>`
   align-items: center;
   gap: 86px;
   background: ${({ $whiteColorRGBA }) => $whiteColorRGBA};
+  flex-wrap: wrap;
 
   .frame1 {
     display: flex;
@@ -92,9 +93,6 @@ const Container = styled.div<ContainerProps>`
   .arrow3 {
     width: 57px;
     height: 59px;
-  }
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
   }
 `;
 
