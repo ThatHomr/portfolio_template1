@@ -21,6 +21,7 @@ const Container = styled.div<ContainerProps>`
   align-items: flex-start;
   gap: 24px;
   flex: 1 0 0;
+
   .titleBox {
     display: flex;
     flex-direction: column;
@@ -28,6 +29,7 @@ const Container = styled.div<ContainerProps>`
     gap: 8px;
     align-self: stretch;
   }
+
   .title {
     align-self: stretch;
     font-size: 20px;
@@ -36,6 +38,7 @@ const Container = styled.div<ContainerProps>`
     line-height: 30px;
     color: ${({ $blackColorRGBA }) => $blackColorRGBA};
   }
+
   .content {
     align-self: stretch;
     font-size: 17px;
@@ -44,9 +47,12 @@ const Container = styled.div<ContainerProps>`
     line-height: 27px;
     color: ${({ $blackColorRGBA }) => $blackColorRGBA};
   }
+
   .imgBox {
-    height: 330px !important;
-    align-self: stretch !important;
+    position: relative;
+    width: 100%;
+    height: 330px;
+    align-self: stretch;
   }
 `;
 
@@ -62,7 +68,9 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
 
   return (
     <Container $blackColorRGBA={blackColorRGBA}>
-      <Image src={imgData.src} alt="imgData" fill className="imgBox" />
+      <div className="imgBox">
+        <Image src={imgData.src} alt="imgData" fill />
+      </div>
       <div className="titleBox">
         <p className="title">{title}</p>
         <p className="content">{content}</p>
@@ -70,4 +78,5 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </Container>
   );
 };
+
 export default GalleryCard;

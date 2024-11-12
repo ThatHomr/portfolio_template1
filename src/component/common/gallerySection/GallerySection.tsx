@@ -14,11 +14,12 @@ interface ContainerProps {
 
 const Container = styled.div<ContainerProps>`
   display: flex;
-  width: -webkit-fill-available;
+  width: 1280px;
   padding: 42px 24px;
   flex-direction: column;
   align-items: center;
   gap: 42px;
+  position: relative;
   .titleP {
     color: ${({ $blackColorRGBA }) => $blackColorRGBA};
     text-align: center;
