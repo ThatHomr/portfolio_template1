@@ -16,9 +16,11 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   display: flex;
   min-width: 320px;
+  width: 320px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  flex: 1 0 0;
   .titleBox {
     display: flex;
     flex-direction: column;
@@ -42,6 +44,10 @@ const Container = styled.div<ContainerProps>`
     line-height: 27px;
     color: ${({ $blackColorRGBA }) => $blackColorRGBA};
   }
+  .imgBox {
+    height: 330px !important;
+    align-self: stretch !important;
+  }
 `;
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
@@ -56,7 +62,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
 
   return (
     <Container $blackColorRGBA={blackColorRGBA}>
-      <Image src={imgData.src} alt="imgData" height={330} />
+      <Image src={imgData.src} alt="imgData" fill className="imgBox" />
       <div className="titleBox">
         <p className="title">{title}</p>
         <p className="content">{content}</p>
