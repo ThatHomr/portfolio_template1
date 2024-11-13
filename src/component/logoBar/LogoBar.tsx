@@ -3,6 +3,7 @@ import { hexToRgba } from "@/utils/utils";
 import styled from "styled-components";
 import Google from "../common/svg/Google";
 import Nike from "../common/svg/Nike";
+import Samsung from "../common/svg/Samsung";
 
 interface ContainerProps {
   $whiteColorRGBA: string;
@@ -28,6 +29,11 @@ const Container = styled.div<ContainerProps>`
     height: 30.741px;
     flex-shrink: 0;
   }
+  .imgSamsung {
+    width: 86.425px;
+    height: 30.741px;
+    flex-shrink: 0;
+  }
 `;
 
 const LogoBar: React.FC = ({}) => {
@@ -47,6 +53,9 @@ const LogoBar: React.FC = ({}) => {
       </div>
       <div className="imgNike">
         <Nike color={blackColorRGBA} width={86.425} height={30.741} />
+      </div>
+      <div className="imgSamsung">
+        <Samsung color={blackColorRGBA} width={86.425} height={30.741} />
       </div>
     </Container>
   );
