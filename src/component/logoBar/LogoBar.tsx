@@ -5,6 +5,7 @@ import Google from "../common/svg/Google";
 import Nike from "../common/svg/Nike";
 import Samsung from "../common/svg/Samsung";
 import Apple from "../common/svg/Apple";
+import Adidas from "../common/svg/Adidas";
 
 interface ContainerProps {
   $whiteColorRGBA: string;
@@ -40,6 +41,11 @@ const Container = styled.div<ContainerProps>`
     height: 46.828px;
     flex-shrink: 0;
   }
+  .imgAdidas {
+    width: 64.936px;
+    height: 44px;
+    flex-shrink: 0;
+  }
 `;
 
 const LogoBar: React.FC = ({}) => {
@@ -65,6 +71,9 @@ const LogoBar: React.FC = ({}) => {
       </div>
       <div className="imgApple">
         <Apple color={blackColorRGBA} width={38.111} height={46.828} />
+      </div>
+      <div className="imgAdidas">
+        <Adidas color={blackColorRGBA} width={64.936} height={43.672} />
       </div>
     </Container>
   );

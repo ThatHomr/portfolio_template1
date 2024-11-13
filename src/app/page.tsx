@@ -17,6 +17,7 @@ import img4 from ".././../public/image/Image4.png";
 import img5 from ".././../public/image/Image5.png";
 import img6 from ".././../public/image/Image6.png";
 import GallerySection from "@/component/common/gallerySection/GallerySection";
+import LogoBar from "@/component/logoBar/LogoBar";
 
 interface ContainerProps {
   $WhiteColorRGBA: string;
@@ -25,6 +26,12 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   background: ${({ $WhiteColorRGBA }) => $WhiteColorRGBA};
   .galleryBox {
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoBarBox {
     width: -webkit-fill-available;
     display: flex;
     align-items: center;
@@ -132,6 +139,9 @@ export default function Home() {
       <SkillSection2 skillList={skillList2} />
       <div className="galleryBox">
         <GallerySection dataList={galleryList} />
+      </div>
+      <div className="logoBarBox">
+        <LogoBar />
       </div>
     </Container>
   );
